@@ -10,7 +10,7 @@ public class HowManyTimesToSevenBonus {
         System.out.println("How many times would you like to roll the dice?");
         int userNum = myScanner.nextInt();
 
-        //    int i = 0;       No. of rolls
+        //    int i = 0;    No. of rolls
         int count2 = 0;  // No. of rolls = to 2
         int count3 = 0;  // No. of rolls = to 3
         int count4 = 0;  // No. of rolls = to 4
@@ -23,6 +23,8 @@ public class HowManyTimesToSevenBonus {
         int count11 = 0;  // No. of rolls = to 11
         int count12 = 0;  // No. of rolls = to 12
 
+        boolean hasRolled7 = true;
+
         for (int i = 1; i <= userNum; i++) {
             int dice1 = randomGenerator.nextInt(6) + 1;
             int dice2 = randomGenerator.nextInt(6) + 1;
@@ -33,7 +35,14 @@ public class HowManyTimesToSevenBonus {
                 if (sum == 4) count4++;
                 if (sum == 5) count5++;
                 if (sum == 6) count6++;
-                if (sum == 7) count7++;
+                if (sum == 7) { count7++;
+                    if (hasRolled7 == true) {
+                        System.out.println("It took you this many rolls to reach 7: " + i);
+                        hasRolled7 = false;
+                    }
+
+            }
+
                 if (sum == 8) count8++;
                 if (sum == 9) count9++;
                 if (sum == 10) count10++;
