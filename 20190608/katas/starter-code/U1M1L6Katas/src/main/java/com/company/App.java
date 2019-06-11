@@ -16,8 +16,8 @@ public class App {
     //Total
     public static int total(int[] totalArr) {  // declare array in method, int return type, name method, declare parameter of int array and name
         int sum = 0;                           // set sum to 0
-        for (int value : totalArr) {           // loop incrementally adds each element into the 'value'space
-            sum += value;                      // tells value to hold the total sum as each element is added
+        for (int each : totalArr) {           // loop incrementally adds each element into the 'value'space
+            sum += each;                      // tells value to hold the total sum as each element is added
         }
         return sum;                             // have to have a return to call in main method
     }
@@ -76,7 +76,6 @@ public class App {
 
     // Reverse
     public static int[] reverse(int[] originalArr) {
-        ;
         int[] reversedArr = new int[originalArr.length];     //makes new array to put things in
         int indexNew = 0;                                    // keeps track of index or new array
         for (int i = originalArr.length - 1; i > -1; i--) {  //sets up reverse incrementing for transfer
