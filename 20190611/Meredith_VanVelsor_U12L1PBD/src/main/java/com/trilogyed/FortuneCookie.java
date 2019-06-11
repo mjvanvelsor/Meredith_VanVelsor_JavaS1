@@ -33,6 +33,22 @@ public class FortuneCookie {
         int randomLotto5 = randomGenerator.nextInt((maxLotto - minLotto) + 1) + minLotto;
         int randomLotto6 = randomGenerator.nextInt((maxLotto - minLotto) + 1) + minLotto;
 
+        while (randomLotto1 == randomLotto2) {
+            randomLotto2 = randomGenerator.nextInt((maxLotto - minLotto) + 1) + minLotto;
+        }
+        while (randomLotto2 == randomLotto3 || randomLotto1 == randomLotto2) {
+            randomLotto3 = randomGenerator.nextInt((maxLotto - minLotto) + 1) + minLotto;
+        }
+        while (randomLotto3 == randomLotto4 || randomLotto2 == randomLotto3 || randomLotto1 == randomLotto2) {
+            randomLotto4 = randomGenerator.nextInt((maxLotto - minLotto) + 1) + minLotto;
+        }
+        while (randomLotto4 == randomLotto5 || randomLotto3 == randomLotto4 || randomLotto2 == randomLotto3 || randomLotto1 == randomLotto2) {
+            randomLotto5 = randomGenerator.nextInt((maxLotto - minLotto) + 1) + minLotto;
+        }
+        while (randomLotto5 == randomLotto6 || randomLotto4 == randomLotto5 || randomLotto3 == randomLotto4 || randomLotto2 == randomLotto3 || randomLotto1 == randomLotto2) {
+            randomLotto6 = randomGenerator.nextInt((maxLotto - minLotto) + 1) + minLotto;
+        }
+
         System.out.println(randomLotto1 + " - " + randomLotto2 + " - " + randomLotto3 + " - "
                 + randomLotto4 + " - " + randomLotto5 + " - " + randomLotto6);
     }
