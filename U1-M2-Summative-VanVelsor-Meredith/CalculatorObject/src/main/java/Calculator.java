@@ -1,5 +1,7 @@
 public class Calculator {
 
+    // overloading methods for int and double data types
+
     public int add(int a, int b){
         System.out.print(a + " + " + b + " = ");
         int sum = a + b;

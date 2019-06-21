@@ -18,12 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Farmer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-end-line="19" />
-              <folding>
-                <element signature="e#61#62#0" expanded="true" />
-                <element signature="e#119#120#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="336">
+              <caret line="18" column="12" selection-start-line="18" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -32,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/RPGgame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -40,16 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Constable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="399">
               <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-              <folding>
-                <element signature="e#102#103#0" expanded="true" />
-                <element signature="e#125#126#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#617#618#0" expanded="true" />
-                <element signature="e#858#859#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -59,10 +47,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
               <caret line="1" column="27" selection-start-line="1" selection-end-line="2" />
-              <folding>
-                <element signature="e#95#96#0" expanded="true" />
-                <element signature="e#118#119#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -70,12 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
+            <state relative-caret-position="714">
               <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
-              <folding>
-                <element signature="e#670#671#0" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -232,33 +212,21 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/RPGgame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Farmer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-end-line="19" />
-          <folding>
-            <element signature="e#61#62#0" expanded="true" />
-            <element signature="e#119#120#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="18" column="12" selection-start-line="18" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Constable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="399">
           <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="e#102#103#0" expanded="true" />
-            <element signature="e#125#126#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#858#859#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -266,21 +234,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="27" selection-start-line="1" selection-end-line="2" />
-          <folding>
-            <element signature="e#95#96#0" expanded="true" />
-            <element signature="e#118#119#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
+        <state relative-caret-position="714">
           <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
-          <folding>
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -18,62 +18,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/IceCreamFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-              <folding>
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#611#612#0" expanded="true" />
-                <element signature="e#648#649#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#759#760#0" expanded="true" />
-                <element signature="e#798#799#0" expanded="true" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#949#950#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#1022#1023#0" expanded="true" />
-                <element signature="e#1077#1078#0" expanded="true" />
-                <element signature="e#1127#1128#0" expanded="true" />
-                <element signature="e#1163#1164#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
-                <element signature="e#1299#1300#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/IceCreamShop.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-146">
-              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-              <folding>
-                <element signature="e#170#171#0" expanded="true" />
-                <element signature="e#214#215#0" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#315#316#0" expanded="true" />
-                <element signature="e#1052#1053#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1140#1141#0" expanded="true" />
-                <element signature="e#1188#1189#0" expanded="true" />
-                <element signature="e#1256#1257#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1341#1342#0" expanded="true" />
-                <element signature="e#1385#1386#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-243">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/IceCreamShop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-357">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            <state relative-caret-position="63">
+              <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -92,8 +56,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/IceCream.java" />
         <option value="$PROJECT_DIR$/src/main/java/IceCreamFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/IceCreamShop.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
       </list>
     </option>
   </component>
@@ -105,9 +69,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="207" />
+    <option name="x" value="616" />
     <option name="y" value="23" />
-    <option name="width" value="1307" />
+    <option name="width" value="874" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectView">
@@ -159,7 +123,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="207" y="23" width="1307" height="877" extended-state="0" />
+    <frame x="616" y="23" width="874" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.19731319" />
@@ -195,60 +159,24 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IceCreamShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IceCreamFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-            <element signature="e#1163#1164#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-243">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IceCreamShop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-          <folding>
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1188#1189#0" expanded="true" />
-            <element signature="e#1256#1257#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1341#1342#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="63">
+          <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
         </state>
       </provider>
     </entry>

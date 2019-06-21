@@ -1,11 +1,12 @@
 public class IceCreamFactory {
+    // custom ice cream factory properties
     private String flavor;
     private float ingredientCost;
     private int gallonsIceCream;
     private int numOfMachines;
     private int numEmployees;
 
-
+    //custom shop methods
     public String churning(){
         return "Churn, Baby, churn.";
     }
@@ -14,9 +15,13 @@ public class IceCreamFactory {
         return ingredientCost * gallonsIceCream;
     }
 
+
+    //need this default constructor to instantiate in App class
     public IceCreamFactory() {
     }
 
+
+    //constructor (could use this to instantiate too, but must fill in parameters)
     public IceCreamFactory(String flavor, float ingredientCost, int gallonsIceCream, int numOfMachines, int numEmployees) {
         this.flavor = flavor;
         this.ingredientCost = ingredientCost;
@@ -25,6 +30,8 @@ public class IceCreamFactory {
         this.numEmployees = numEmployees;
     }
 
+
+    //getters and setters
     public String getFlavor() {
         return flavor;
     }

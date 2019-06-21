@@ -1,18 +1,23 @@
 public class CustomerContact {
 
+    // properties
     private String firstName;
     private String lastName;
     private String email;
 
+    //default constructor needed to instantiate in another class since I didn't instantiate in this class
+
     public CustomerContact() {
     }
 
+    //constructor
     public CustomerContact(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
+    //getters and setters
     public String getFirstName() {
         return firstName;
     }

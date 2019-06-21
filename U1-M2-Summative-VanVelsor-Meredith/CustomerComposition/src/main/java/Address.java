@@ -1,10 +1,17 @@
 public class Address {
+
+    // properties
     private String street1;
     private String street2;
     private String city;
     private String state;
     private String zipcode;
 
+    //default constructor needed to instantiate in another class since I didn't instantiate in this class
+    public Address() {
+    }
+
+    //constructor
     public Address(String street1, String street2, String city,
                    String state, String zipcode) {
         this.street1 = street1;
@@ -14,9 +21,7 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public Address() {
-    }
-
+    // getters and setters
     public String getStreet1() {
         return street1;
     }

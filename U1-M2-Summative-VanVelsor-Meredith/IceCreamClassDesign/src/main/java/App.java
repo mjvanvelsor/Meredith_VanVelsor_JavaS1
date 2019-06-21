@@ -1,5 +1,7 @@
 public class App {
     public static void main(String[] args) {
+
+        // this is app is instantiating the factory and shop and utilizing
         IceCreamFactory factory = new IceCreamFactory();
         IceCreamShop shop = new IceCreamShop();
 
