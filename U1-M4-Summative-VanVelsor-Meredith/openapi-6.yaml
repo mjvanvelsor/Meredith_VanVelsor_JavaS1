@@ -1,0 +1,82 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Quote of the Day, Word of the Day, and Magic 8 Ball service
+  description: Provides a quote of the day, word of the day, and magic 8 ball application.
+servers:
+  - url: http://localhost:8080
+    description: Local dev server
+
+paths:
+  /quote:
+    get:
+      summary: Provides a quote of the day.
+      description: Randomly selects a quote of the day for each visitor.
+      parameters:
+        - name: quote
+          in: path
+          required: true
+          description: Quote of the day.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A random quote of the day.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  quote:
+                    type: string
+                    description: The quote randomly generated.
+                  author:
+                    type: string
+                    description: The author of generated quote.
+
+  /word:
+    get:
+      summary: Provides a word of the day.
+      description: Randomly selects a word of the day and provides a corresponding definition.
+      parameters:
+        - name: word
+          in: path
+          required: true
+          description: Word of the day.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A random word of the day with corresponding definition.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  word:
+                    type: string
+                    description: The word randomly generated.
+                  definition:
+                    type: string
+                    description: The definition of generated word.
+
+  /magic:
+    post:
+      summary: Magic 8 Ball Application
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: A random answer is returned for a question.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer:
+                    type: string
+                    description: The answer randomly generated.
