@@ -9,9 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
+// This class holds the data for the database so this annotation is required.
 @Repository
 public class PublisherDaoJdbctemplateImpl implements PublisherDao {
+    // need to set prepared statements and constants (permanent variables) to prevent
+    // sql injection attacks (green is prepared statements)
+
     // Add a publisher - prepared statement
     private static final String INSERT_PUBLISHER_SQL =
             "insert into publisher (name, street, city, state, postal_code, phone, email) "
@@ -30,18 +33,26 @@ public class PublisherDaoJdbctemplateImpl implements PublisherDao {
             "update publisher set name = ?, street = ?, city = ?, state = ?, " +
                     "postal_code = ?, phone = ?, email = ? where publisher_id = ?";
 
+    //Jdbc Template property
     private JdbcTemplate jdbcTemplate;
-
+    // needs constructor and annotation to inject. Called 'constructor injection'
     @Autowired
     public PublisherDaoJdbctemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
+    // this makes this method do ALL of the pieces or roll back because otherwise it
+    // is vulnerable to someone else updating at the same time and returning the wrong
+    // 'last inserted id' and thus the wrong publisher
     @Transactional
     public Publisher addPublisher(Publisher publisher) {
+        // uses update method to insert data into DB
+        // pass in all the parameters as needed
         jdbcTemplate.update(INSERT_PUBLISHER_SQL, publisher.getName(), publisher.getStreet(), publisher.getCity(),
                 publisher.getState(), publisher.getPostalCode(), publisher.getPhone(), publisher.getEmail());
+        // pass in the 'select last insert id' to call function in sql and
+        // retrieve what was just created in an Integer format
         int id = jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class);
         publisher.setPublisherId(id);
         return publisher;
@@ -49,6 +60,8 @@ public class PublisherDaoJdbctemplateImpl implements PublisherDao {
 
     @Override
     public Publisher getPublisher(int id) {
+        // uses row mapper method and query for object method
+        // uses id to create publisher object
         try {
             return jdbcTemplate.queryForObject(SELECT_PUBLISHER_SQL, this::mapRowToPublisher, id);
         } catch (EmptyResultDataAccessException e){
@@ -59,6 +72,7 @@ public class PublisherDaoJdbctemplateImpl implements PublisherDao {
 
     @Override
     public List<Publisher> getAllPublishers() {
+        // using query bc there will be more than one thing returned
         return jdbcTemplate.query(SELECT_ALL_PUBLISHERS_SQL, this::mapRowToPublisher);
     }
 
@@ -70,6 +84,8 @@ public class PublisherDaoJdbctemplateImpl implements PublisherDao {
 
     @Override
     public void deletePublisher(int id) {
+        // has to use update because jdbc can only do query / query for object
+        // or update. Update is the only one that changes the others add.
         jdbcTemplate.update(DELETE_PUBLISHER_SQL, id);
     }
 

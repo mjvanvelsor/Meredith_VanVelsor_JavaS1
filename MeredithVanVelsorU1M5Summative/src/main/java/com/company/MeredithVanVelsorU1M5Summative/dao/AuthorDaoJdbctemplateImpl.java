@@ -10,9 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
-@Repository
+// This class holds the data for the database so this annotation is required.
+@Repository     // is a spring annotation - declares this as a repository and alerts Spring of it's presence
 public class AuthorDaoJdbctemplateImpl implements AuthorDao {
+    // need to set prepared statements and constants (permanent variables) to prevent
+    // sql injection attacks (green is prepared statements)
     //Prepared Statements + Constants
     // Used to prevent SQL Injection Attacks
     private static final String INSERT_AUTHOR_SQL =
@@ -45,8 +47,12 @@ public class AuthorDaoJdbctemplateImpl implements AuthorDao {
     // is vulnerable to someone else updating at the same time and returning the wrong
     // 'last inserted id' and thus the wrong author
     public Author addAuthor(Author author) {
+        // uses update method to insert data into DB
+        // pass in all the parameters as needed
         jdbcTemplate.update(INSERT_AUTHOR_SQL, author.getFirstName(), author.getLastName(), author.getStreet(),
                 author.getCity(), author.getState(), author.getPostalCode(), author.getPhone(), author.getEmail());
+        // pass in the 'select last insert id' to call function in sql and
+        // retrieve what I just created in an Integer format
         int id = jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class);
         author.setAuthorId(id);
         return author;
@@ -54,15 +60,19 @@ public class AuthorDaoJdbctemplateImpl implements AuthorDao {
 
     @Override
     public Author getAuthor(int id) {
+        // uses row mapper method and query for object method
+        // uses id to create author object
         try {
             return jdbcTemplate.queryForObject(SELECT_AUTHOR_SQL, this::mapRowToAuthor, id);
         } catch (EmptyResultDataAccessException e){
+            // if nothing is returned, just catch the exception and return null
             return null;
         }
     }
 
     @Override
     public List<Author> getAllAuthors() {
+        // using query bc there will be more than one thing returned
         return jdbcTemplate.query(SELECT_ALL_AUTHORS_SQL, this::mapRowToAuthor);
     }
 
@@ -74,6 +84,8 @@ public class AuthorDaoJdbctemplateImpl implements AuthorDao {
 
     @Override
     public void deleteAuthor(int id) {
+        // has to use update because jdbc can only do query / query for object
+        // or update. Update is the only one that changes the others add.
         jdbcTemplate.update(DELETE_AUTHOR_SQL, id);
     }
 

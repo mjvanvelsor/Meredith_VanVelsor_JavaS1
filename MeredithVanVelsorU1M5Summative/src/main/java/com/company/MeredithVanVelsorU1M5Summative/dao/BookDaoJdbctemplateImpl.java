@@ -10,10 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
-@Repository
+// This class holds the data for the database so this annotation is required.
+@Repository  // is a spring annotation - declares this as a repository and alerts Spring of it's presence
 public class BookDaoJdbctemplateImpl implements BookDao{
-
+    // need to set prepared statements and constants (permanent variables) to prevent
+    // sql injection attacks (green is prepared statements)
     //Prepared Statements + Constants
     private static final String INSERT_BOOK_SQL =
             "insert into book (isbn, publish_date, author_id, title, publisher_id, price) "
@@ -36,17 +37,24 @@ public class BookDaoJdbctemplateImpl implements BookDao{
 
     //Jdbc Template property
     private JdbcTemplate jdbcTemplate;
-
+    // needs constructor and annotation to inject. Called 'constructor injection'
     @Autowired
     public BookDaoJdbctemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
+    // this makes this method do ALL of the pieces or roll back because otherwise it
+    // is vulnerable to someone else updating at the same time and returning the wrong
+    // 'last inserted id' and thus the wrong book
     @Transactional
     public Book addBook(Book book) {
+        // uses update method to insert data into DB
+        // pass in all the parameters as needed
         jdbcTemplate.update(INSERT_BOOK_SQL, book.getIsbn(), book.getPublishDate(), book.getAuthorId(), book.getTitle(),
                 book.getPublisherId(), book.getPrice());
+        // pass in the 'select last insert id' to call function in sql and
+        // retrieve what I just created in an Integer format
         int id = jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class);
         book.setBookId(id);
         return book;
@@ -54,6 +62,8 @@ public class BookDaoJdbctemplateImpl implements BookDao{
 
     @Override
     public Book getBook(int id) {
+        // uses row mapper method and query for object method
+        // uses id to create book object
         try{
             return jdbcTemplate.queryForObject(SELECT_BOOK_SQL, this::mapRowToBook, id);
         } catch (EmptyResultDataAccessException e){
@@ -64,6 +74,7 @@ public class BookDaoJdbctemplateImpl implements BookDao{
 
     @Override
     public List<Book> getAllBooks() {
+        // using query bc there will be more than one thing returned
         return jdbcTemplate.query(SELECT_ALL_BOOKS_SQL, this::mapRowToBook);
     }
 
@@ -75,6 +86,8 @@ public class BookDaoJdbctemplateImpl implements BookDao{
 
     @Override
     public void deleteBook(int id) {
+        // has to use update because jdbc can only do query / query for object
+        // or update. Update is the only one that changes the others add.
         jdbcTemplate.update(DELETE_BOOK_SQL, id);
     }
 
