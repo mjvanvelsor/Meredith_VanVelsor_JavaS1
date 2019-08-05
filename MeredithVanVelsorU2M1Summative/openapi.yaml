@@ -1,0 +1,143 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Tasker Service
+  description: Provides a simple database-backed REST web service that manages tasks and displays ads with each task
+servers: 
+  - url: http://localhost:8080/
+    description: Local dev server
+
+paths:
+  /tasks:
+    post:
+      summary: Creates a task with the given information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/task'
+      responses:
+        '201':
+          description: task input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+        '400':
+          description: Invalid request syntax.
+        '422':
+          description: Incomplete task information. Some required fields missing.
+    get:
+      summary: returns all tasks.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: List of all tasks in service.
+          schema:
+            type: string
+            minimum: 1
+      responses:
+        '200':
+          description: All task objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+    delete:
+      summary: Deletes the task
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the task you would like to delete.
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description: task successfully deleted.      
+  /tasks/{id}:
+    get:
+      summary: returns task from provided information if valid.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the task you would like to return.
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description: task object matching given ID.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+    put:
+      summary: Updates the task entry with the given ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the task you would like to update.
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/task'
+      responses:
+        '200':
+          description: task successfully updated.
+        '422':
+          description: task ID on path must match the ID in the task object
+  /tasks/category/{category}:
+    get:
+      summary: Retrieves all tasks for the given category.
+      parameters:
+        - name: category
+          in: path
+          required: true
+          description: category of the tasks you would like to view.
+          schema:
+            type: string
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description: All tasks for the given category.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+components:
+  schemas:
+    task:
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        createDate:
+          type: object
+        dueDate:
+          type: object
+        category:
+          type: string
+          items:
+            $ref: '#/components/schemas/task'
+      required:
+        - name
+        - description
+        - createDate
+        - dueDate
+        - category
