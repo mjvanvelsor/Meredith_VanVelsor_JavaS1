@@ -1,5 +1,7 @@
 package com.trilogyed.stwitter.controller;
 
+import com.trilogyed.stwitter.exception.NotFoundException;
+import com.trilogyed.stwitter.model.Comment;
 import com.trilogyed.stwitter.model.Post;
 import com.trilogyed.stwitter.model.PostWithComments;
 import com.trilogyed.stwitter.service.ServiceLayer;
@@ -21,15 +23,12 @@ public class StwitterPostController {
 
     @Autowired
     ServiceLayer service;
-//    @Autowired
-//    CommentServiceClient client;
 
     public StwitterPostController(ServiceLayer service, CommentServiceClient client) {
         this.service = service;
-//        this.client = client;
     }
 
-    @CachePut(key = "#result.getId()")
+    @CachePut(key = "#result.getPostID()")
     @PostMapping
     public PostWithComments createPost(@RequestBody @Valid Post post){
         System.out.println("CREATING POST");
@@ -39,21 +38,30 @@ public class StwitterPostController {
     @Cacheable
     @GetMapping("/{id}")
     public PostWithComments getPost(@PathVariable int id){
+        PostWithComments postWithComments = service.findPost(id);
+        if (postWithComments == null)
+            throw new NotFoundException("Post could not be retrieved for id: " + id);
         System.out.println("GETTING POST ID = " + id);
-        return service.findPost(id);
+        return postWithComments;
     }
 
     @GetMapping("/all")
     public List<PostWithComments> getAllPosts(){
+        List<PostWithComments> postWithComments = service.findAllPosts();
+        if (postWithComments == null)
+            throw new NotFoundException("Posts could not be retrieved.");
         return service.findAllPosts();
     }
 
     @GetMapping("/user/{posterName}")
     public List<PostWithComments> getAllPostsByPoster(@PathVariable String posterName){
-        return service.findAllPostsByPoster(posterName);
+        List<PostWithComments> postWithComments = service.findAllPostsByPoster(posterName);
+        if (postWithComments == null)
+            throw new NotFoundException("Posts could not be retrieved for: " + posterName);
+        return postWithComments;
     }
 
-    @CacheEvict(key = "#post.getId()")
+    @CacheEvict(key = "#post.getPostID()")
     @PutMapping("/{id}")
     public void updatePost (@PathVariable @Valid int id, @RequestBody PostWithComments pwc){
         System.out.println("UPDATING POST ID = " + pwc.getPostID());

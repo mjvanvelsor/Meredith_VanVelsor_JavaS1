@@ -122,11 +122,11 @@ public class ServiceLayer {
             List<Comment> comments = commentClient.findAllCommentsByPostId(post.getPostID());
             pwc.setComments(comments);
         } catch (Exception e) {
-            if (e.getCause().getClass().equals(SocketTimeoutException.class)) {
-                throw new NotFoundException("Server connection timeout!");
-            } else {
-                throw e;
-            }
+////            if (e.getCause().getClass().equals(SocketTimeoutException.class)) {
+//                throw new NotFoundException("Server connection timeout!");
+//            } else {
+//                throw e;
+//            }
         }
         return pwc;
     }
