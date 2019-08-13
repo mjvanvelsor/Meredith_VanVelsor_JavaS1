@@ -61,7 +61,7 @@ public class StwitterPostController {
         return postWithComments;
     }
 
-    @CacheEvict(key = "#post.getPostID()")
+//    @CacheEvict(key = "#post.getPostID()")
     @PutMapping("/{id}")
     public void updatePost (@PathVariable @Valid int id, @RequestBody PostWithComments pwc){
         System.out.println("UPDATING POST ID = " + pwc.getPostID());

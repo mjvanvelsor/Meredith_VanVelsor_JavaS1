@@ -52,7 +52,7 @@ public class StwitterCommentController {
         return service.findAllComments();
     }
 
-    @GetMapping("/postid/{postId}")
+    @GetMapping("/postId/{postId}")
     public List<Comment> getAllCommentsByPostId(@PathVariable int postId) {
         List<Comment> comments = service.findAllCommentsByPostId(postId);
         if (comments == null)

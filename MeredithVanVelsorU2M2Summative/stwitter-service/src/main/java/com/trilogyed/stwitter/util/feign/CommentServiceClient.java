@@ -19,8 +19,8 @@ public interface CommentServiceClient {
     @RequestMapping(value = "/comments/all", method = RequestMethod.GET)
     public List<Comment> findAllComments();
 
-    @RequestMapping(value = "/comments/{postid}", method = RequestMethod.GET)
-    public List<Comment> findAllCommentsByPostId(int postid);
+    @RequestMapping(value = "/comments/postId/{postid}", method = RequestMethod.GET)
+    public List<Comment> findAllCommentsByPostId(@PathVariable int postid);
 
     @RequestMapping(value = "/comments/{id}", method = RequestMethod.PUT)
     public void updateComment(@PathVariable("id") @RequestBody Comment comment);

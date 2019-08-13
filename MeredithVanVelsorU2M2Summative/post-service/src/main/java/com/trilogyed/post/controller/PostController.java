@@ -41,8 +41,8 @@ public class PostController {
 
     @GetMapping("/user/{posterName}")
     @ResponseStatus(value = HttpStatus.OK)
-    public List<Post> findAllPostsByPoster(String name){
-        List<Post> postList = dao.getAllPostsByPoster(name);
+    public List<Post> findAllPostsByPoster(@PathVariable String posterName){
+        List<Post> postList = dao.getAllPostsByPoster(posterName);
         return postList;
     }
 
